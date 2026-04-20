@@ -113,8 +113,9 @@ input, textarea, select, button { font: inherit; color: inherit; }
   background: var(--orange); color: #fff; padding: 10px 16px;
   z-index: 10000; border-radius: 0 0 var(--radius) 0;
   font-weight: 500;
+  display: none;
 }
-.skip-link:focus { top: 0; }
+.skip-link:focus { display: block; top: 0; }
 
 :focus-visible {
   outline: 2px solid var(--orange);
@@ -186,8 +187,15 @@ section.dark .section-body { color: var(--text-on-dark); }
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--sans); font-size: 18px; font-weight: 600;
   color: var(--text); letter-spacing: -0.02em;
+  flex-shrink: 0;
 }
-.logo-img { width: 48px; height: 48px; object-fit: contain; }
+.logo-img {
+  width: 32px; height: 32px;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
+}
+.logo-text { display: none; }
 .logo-text span { color: var(--orange); }
 
 .nav-links { display: flex; gap: 32px; align-items: center; }
@@ -387,7 +395,15 @@ section.dark .btn-outline:hover { border-color: #fff; }
 }
 .trust-logo:hover { opacity: 1; color: var(--text); }
 
-/* ─── About ──────────────────────────────────────────── */
+.footer-brand {
+  display: flex; flex-direction: column; gap: 16px;
+}
+.footer-brand .logo { margin-bottom: 8px; }
+.footer-brand .logo-img { width: 48px; height: 48px; }
+.footer-brand p {
+  font-size: 14px; color: var(--text-muted); line-height: 1.7;
+  max-width: 280px;
+}
 .about-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
 }
