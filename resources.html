@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/styles.css?v=4">
+<link rel="stylesheet" href="/assets/styles.css?v=5">
 
 <style>
 /* Hero */
@@ -59,7 +59,7 @@
 
 /* Category Pills */
 .cat-pills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; padding: 40px 0 8px; }
-.cat-pill { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-muted); padding: 9px 20px; border-radius: 100px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all var(--t-fast); }
+.cat-pill { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-muted); padding: 9px 20px; border-radius: 100px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all var(--t-fast); font-family: inherit; }
 .cat-pill:hover { border-color: var(--orange); color: var(--text); }
 .cat-pill.active { background: var(--orange); border-color: var(--orange); color: #fff; }
 
@@ -67,11 +67,11 @@
 .res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; padding: 24px 0 80px; }
 .res-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: all var(--t); text-decoration: none; color: inherit; }
 .res-card:hover { transform: translateY(-4px); border-color: var(--orange); box-shadow: var(--shadow-xl); }
+.res-card.hidden { display: none; }
 .res-img { aspect-ratio: 16/9; background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
 .res-img::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 30%, color-mix(in srgb, var(--orange) 14%, transparent) 0%, transparent 60%); }
 .res-img svg { width: 60%; max-width: 200px; position: relative; z-index: 1; }
 .res-badge { position: absolute; top: 14px; right: 14px; background: color-mix(in srgb, var(--orange) 92%, transparent); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 10px; border-radius: 100px; z-index: 2; }
-.res-badge.coming { background: rgba(60, 60, 60, 0.92); }
 .res-content { padding: 26px 26px 24px; display: flex; flex-direction: column; flex: 1; }
 .res-cat { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
 .res-title { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); margin-bottom: 10px; line-height: 1.3; letter-spacing: -0.01em; }
@@ -155,7 +155,7 @@
       <p>Real tactics from real deployments — for septic, roofing, HVAC, and towing companies scaling without adding headcount.</p>
       <div class="res-stats">
         <span><svg viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>8 guides</span>
-        <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>5–15 min reads</span>
+        <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>6–12 min reads</span>
         <span><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Updated 2026</span>
       </div>
     </div>
@@ -196,11 +196,11 @@
   <!-- CATEGORY PILLS -->
   <div class="container">
     <div class="cat-pills" role="tablist">
-      <button class="cat-pill active" type="button">All</button>
-      <button class="cat-pill" type="button">Guides</button>
-      <button class="cat-pill" type="button">Industry Deep Dives</button>
-      <button class="cat-pill" type="button">Best Practices</button>
-      <button class="cat-pill" type="button">Case Studies</button>
+      <button class="cat-pill active" type="button" data-filter="all">All</button>
+      <button class="cat-pill" type="button" data-filter="guide">Guides</button>
+      <button class="cat-pill" type="button" data-filter="deep-dive">Industry Deep Dives</button>
+      <button class="cat-pill" type="button" data-filter="best-practice">Best Practices</button>
+      <button class="cat-pill" type="button" data-filter="case-study">Case Studies</button>
     </div>
   </div>
 
@@ -210,7 +210,7 @@
       <div class="res-grid">
 
         <!-- Customer Intake -->
-        <a href="/#contact" class="res-card">
+        <a href="/guides/customer-intake-automation.html" class="res-card" data-category="guide">
           <div class="res-img">
             <span class="res-badge">Guide</span>
             <svg viewBox="0 0 200 120" fill="none" aria-hidden="true">
@@ -233,9 +233,9 @@
         </a>
 
         <!-- Roofing -->
-        <a href="/#contact" class="res-card">
+        <a href="/guides/roofing-growth-through-ai.html" class="res-card" data-category="deep-dive">
           <div class="res-img">
-            <span class="res-badge coming">Coming Soon</span>
+            <span class="res-badge">Deep Dive</span>
             <svg viewBox="0 0 200 120" fill="none" aria-hidden="true">
               <path d="M30 80 L100 30 L170 80" stroke="#E85D04" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
               <rect x="50" y="80" width="100" height="30" fill="none" stroke="#E85D04" stroke-width="3"/>
@@ -249,15 +249,15 @@
             <p class="res-desc">How leading roofing companies use AI to qualify leads faster, schedule jobs automatically, and manage estimates at scale.</p>
             <div class="res-foot">
               <span class="read-time"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>10 min</span>
-              <span class="res-arrow">Talk to us →</span>
+              <span class="res-arrow">Read →</span>
             </div>
           </div>
         </a>
 
         <!-- HVAC -->
-        <a href="/#contact" class="res-card">
+        <a href="/guides/hvac-scaling-checklist.html" class="res-card" data-category="deep-dive">
           <div class="res-img">
-            <span class="res-badge coming">Coming Soon</span>
+            <span class="res-badge">Deep Dive</span>
             <svg viewBox="0 0 200 120" fill="none" aria-hidden="true">
               <circle cx="100" cy="60" r="35" fill="none" stroke="#E85D04" stroke-width="3"/>
               <path d="M100 40 L100 80 M80 60 L120 60 M86 46 L114 74 M86 74 L114 46" stroke="#F48C06" stroke-width="2.5" stroke-linecap="round"/>
@@ -270,15 +270,15 @@
             <p class="res-desc">Seasonal automation, maintenance reminders, emergency dispatch coordination, and billing automation for HVAC service leaders.</p>
             <div class="res-foot">
               <span class="read-time"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>9 min</span>
-              <span class="res-arrow">Talk to us →</span>
+              <span class="res-arrow">Read →</span>
             </div>
           </div>
         </a>
 
         <!-- Towing -->
-        <a href="/#contact" class="res-card">
+        <a href="/guides/towing-operations-automation.html" class="res-card" data-category="deep-dive">
           <div class="res-img">
-            <span class="res-badge coming">Coming Soon</span>
+            <span class="res-badge">Deep Dive</span>
             <svg viewBox="0 0 200 120" fill="none" aria-hidden="true">
               <rect x="30" y="55" width="70" height="35" rx="4" fill="none" stroke="#E85D04" stroke-width="3"/>
               <rect x="100" y="65" width="40" height="25" rx="3" fill="none" stroke="#E85D04" stroke-width="3"/>
@@ -294,15 +294,15 @@
             <p class="res-desc">Real-time dispatch coordination, customer intake at scale, location tracking, and roadside assistance follow-up automation.</p>
             <div class="res-foot">
               <span class="read-time"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>8 min</span>
-              <span class="res-arrow">Talk to us →</span>
+              <span class="res-arrow">Read →</span>
             </div>
           </div>
         </a>
 
         <!-- ROI Calculator -->
-        <a href="/#contact" class="res-card">
+        <a href="/guides/measuring-automation-roi.html" class="res-card" data-category="best-practice">
           <div class="res-img">
-            <span class="res-badge coming">Coming Soon</span>
+            <span class="res-badge">Best Practice</span>
             <svg viewBox="0 0 200 120" fill="none" aria-hidden="true">
               <rect x="40" y="30" width="120" height="70" rx="6" fill="none" stroke="#E85D04" stroke-width="3"/>
               <rect x="55" y="45" width="40" height="20" rx="2" fill="none" stroke="#F48C06" stroke-width="2"/>
@@ -319,15 +319,15 @@
             <p class="res-desc">How to calculate time savings, cost reduction, and revenue impact from AI agents. Includes an ROI worksheet.</p>
             <div class="res-foot">
               <span class="read-time"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>6 min</span>
-              <span class="res-arrow">Talk to us →</span>
+              <span class="res-arrow">Read →</span>
             </div>
           </div>
         </a>
 
         <!-- Integration -->
-        <a href="/#contact" class="res-card">
+        <a href="/guides/integrating-ai-into-your-stack.html" class="res-card" data-category="best-practice">
           <div class="res-img">
-            <span class="res-badge coming">Coming Soon</span>
+            <span class="res-badge">Best Practice</span>
             <svg viewBox="0 0 200 120" fill="none" aria-hidden="true">
               <circle cx="50" cy="60" r="18" fill="none" stroke="#E85D04" stroke-width="3"/>
               <circle cx="100" cy="60" r="18" fill="none" stroke="#E85D04" stroke-width="3"/>
@@ -343,16 +343,16 @@
             <h3 class="res-title">Integrating AI Into Your Current Stack</h3>
             <p class="res-desc">Technical guide to integrating custom AI agents with your existing CRM, scheduling, and accounting software.</p>
             <div class="res-foot">
-              <span class="read-time"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>11 min</span>
-              <span class="res-arrow">Talk to us →</span>
+              <span class="read-time"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>10 min</span>
+              <span class="res-arrow">Read →</span>
             </div>
           </div>
         </a>
 
         <!-- Case Study -->
-        <a href="/#contact" class="res-card">
+        <a href="/guides/roofing-case-study-15-hours.html" class="res-card" data-category="case-study">
           <div class="res-img">
-            <span class="res-badge coming">Coming Soon</span>
+            <span class="res-badge">Case Study</span>
             <svg viewBox="0 0 200 120" fill="none" aria-hidden="true">
               <path d="M100 20 L112 50 L145 50 L118 70 L128 100 L100 82 L72 100 L82 70 L55 50 L88 50 Z" stroke="#E85D04" stroke-width="3" fill="none" stroke-linejoin="round"/>
               <circle cx="100" cy="62" r="6" fill="#F48C06"/>
@@ -364,7 +364,7 @@
             <p class="res-desc">Real story: Lead qualification agent + scheduling automation eliminated admin overhead and lifted close rate 22%.</p>
             <div class="res-foot">
               <span class="read-time"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>7 min</span>
-              <span class="res-arrow">Talk to us →</span>
+              <span class="res-arrow">Read →</span>
             </div>
           </div>
         </a>
@@ -404,12 +404,10 @@
         <img src="/assets/img/KeresLogo.png" alt="Keres AI" class="logo-img">
       </a>
       <p>Custom AI agents that eliminate repetitive work for field service businesses across septic, roofing, HVAC, and towing.</p>
-      <div class="footer-socials">
-        <a href="https://www.linkedin.com/company/keresai" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h4v4H4V4zm0 6h4v10H4V10zm6 0h4v1.6c.6-1 1.9-1.9 3.6-1.9 3.2 0 3.9 2 3.9 4.7V20h-4v-4.8c0-1.3-.5-2.1-1.7-2.1-1 0-1.7.7-1.7 2.1V20h-4V10z"/></svg>
-        </a>
-        <a href="mailto:ops@keresail.com" aria-label="Email">
+      <div class="footer-contact">
+        <a href="mailto:ops@keresai.com">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 7 9-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>ops@keresai.com</span>
         </a>
       </div>
     </div>
@@ -435,6 +433,28 @@
     <div>Automate Everything.</div>
   </div>
 </footer>
+
+<!-- Category filter -->
+<script>
+(function () {
+  var pills = document.querySelectorAll('.cat-pill');
+  var cards = document.querySelectorAll('.res-card');
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      pills.forEach(function (p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      var filter = pill.getAttribute('data-filter');
+      cards.forEach(function (c) {
+        if (filter === 'all' || c.getAttribute('data-category') === filter) {
+          c.classList.remove('hidden');
+        } else {
+          c.classList.add('hidden');
+        }
+      });
+    });
+  });
+})();
+</script>
 
 <script src="/assets/app.js" defer></script>
 </body>

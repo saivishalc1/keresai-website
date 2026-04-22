@@ -831,6 +831,18 @@ footer {
 }
 .footer-socials a:hover { background: var(--orange); color: #fff; }
 .footer-socials svg { width: 15px; height: 15px; }
+
+.footer-contact { margin-top: 18px; }
+.footer-contact a {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.82);
+  font-size: 14px; font-weight: 500;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.footer-contact a:hover { background: var(--orange); color: #fff; }
+.footer-contact svg { width: 15px; height: 15px; flex-shrink: 0; }
 .footer-bottom {
   max-width: var(--container); margin: 56px auto 0;
   padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.08);

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+<title>Integrating AI Into Your Current Stack | Keres AI</title>
+<meta name="description" content="Technical guide to integrating custom AI agents with your existing CRM, scheduling, and accounting software.">
+<meta name="keywords" content="AI integration, ServiceTitan integration, Housecall Pro AI, Jobber automation, CRM integration">
+<meta name="author" content="Keres AI">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.keresai.com/guides/integrating-ai-into-your-stack.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.keresai.com/guides/integrating-ai-into-your-stack.html">
+<meta property="og:title" content="Integrating AI Into Your Current Stack | Keres AI">
+<meta property="og:description" content="Technical guide to integrating custom AI agents with your existing CRM, scheduling, and accounting software.">
+<meta property="og:image" content="https://www.keresai.com/assets/img/og-image.png">
+
+<link rel="icon" type="image/png" href="/assets/img/KeresLogo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css?v=5">
+<link rel="stylesheet" href="/assets/guide.css?v=1">
+</head>
+
+<body>
+
+<header class="nav" role="banner">
+  <div class="nav-inner">
+    <a href="/" class="logo" aria-label="Keres AI — Home">
+      <img src="/assets/img/KeresLogo.png" alt="Keres AI" class="logo-img">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#industries">Industries</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none">
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <a href="/#contact" class="btn btn-primary desktop-only">Book a Call</a>
+      <button id="hamburger" class="hamburger" type="button" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-menu" class="mobile-menu" data-open="false" aria-label="Mobile navigation">
+  <a href="/#about">About</a>
+  <a href="/#services">Services</a>
+  <a href="/#industries">Industries</a>
+  <a href="/resources.html">Resources</a>
+  <a href="/#contact">Contact</a>
+  <div class="mobile-cta"><a href="/#contact" class="btn btn-primary">Book a Call</a></div>
+</div>
+
+<main id="main">
+
+<article class="guide-wrap">
+
+  <header class="guide-hero">
+    <div class="guide-crumbs"><a href="/">Home</a> / <a href="/resources.html">Resources</a> / Integrating AI Into Your Stack</div>
+    <span class="guide-category">Best Practice</span>
+    <h1 class="guide-title">Integrating AI Into Your <span class="accent">Current Stack</span></h1>
+    <div class="guide-meta">
+      <span><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>10 min read</span>
+      <span><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Updated 2026</span>
+      <span><svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/></svg>For operators</span>
+    </div>
+
+    <div class="guide-hero-img" aria-hidden="true">
+      <svg viewBox="0 0 400 200" fill="none">
+        <circle cx="80" cy="100" r="30" fill="none" stroke="#E85D04" stroke-width="3"/>
+        <circle cx="200" cy="100" r="30" fill="none" stroke="#E85D04" stroke-width="3"/>
+        <circle cx="320" cy="100" r="30" fill="none" stroke="#E85D04" stroke-width="3"/>
+        <path d="M110 100 L170 100 M230 100 L290 100" stroke="#F48C06" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="80" cy="100" r="8" fill="#E85D04"/>
+        <circle cx="200" cy="100" r="8" fill="#E85D04"/>
+        <circle cx="320" cy="100" r="8" fill="#E85D04"/>
+        <path d="M200 70 L200 50 M200 130 L200 150" stroke="#F48C06" stroke-width="2" stroke-dasharray="3 3"/>
+      </svg>
+    </div>
+  </header>
+
+  <section class="guide-body">
+
+    <p>The biggest misconception about AI automation is that you need to rip out your current systems to deploy it. You don't. A well-architected AI agent sits on top of your existing stack &mdash; your CRM, scheduling tool, accounting software &mdash; and talks to them via their APIs. This guide walks through how that integration actually works.</p>
+
+    <h2><span class="num">01</span>What "integration" really means</h2>
+
+    <p>Integration means one thing: your AI agent can read from and write to your existing tools. It doesn't replace your CRM; it updates records in your CRM. It doesn't replace your scheduler; it books into it.</p>
+
+    <p>For a typical field service stack, that usually means:</p>
+
+    <ul>
+      <li><strong>CRM / job management.</strong> ServiceTitan, Housecall Pro, Jobber, FieldEdge, or similar. The agent reads customer history and writes new jobs.</li>
+      <li><strong>Calendar / dispatch.</strong> Either built into the CRM, or a separate tool like Google Calendar.</li>
+      <li><strong>Accounting / invoicing.</strong> QuickBooks, Xero, Sage. The agent drafts invoices and sends reminders.</li>
+      <li><strong>Communication.</strong> Twilio, RingCentral, or similar for SMS and voice.</li>
+    </ul>
+
+    <h2><span class="num">02</span>Integration patterns that work</h2>
+
+    <p>There are three common patterns for connecting AI agents to existing tools, in order of preference:</p>
+
+    <h3>Native API integration</h3>
+
+    <p>If your CRM has a documented REST API (most modern ones do), this is the cleanest option. The agent authenticates, calls endpoints directly, and gets structured responses. Real-time, reliable, and auditable.</p>
+
+    <h3>Webhook-driven integration</h3>
+
+    <p>When the CRM can push events to your agent (new lead, job updated, invoice paid), the agent can react in real time. Pair this with native API calls back to the CRM for a very clean two-way sync.</p>
+
+    <h3>Automation-platform middleware</h3>
+
+    <p>Tools like Zapier, Make, or n8n can sit between your AI agent and legacy systems without proper APIs. Not as fast, and more fragile, but often the only option for older tools.</p>
+
+    <div class="callout">
+      <div class="callout-label">Honest tradeoff</div>
+      <p>If your CRM has no API at all &mdash; some older tools genuinely don't &mdash; your options narrow. Either upgrade the CRM, use screen-scraping (fragile), or accept that the automation can only live upstream (intake) and not write back.</p>
+    </div>
+
+    <h2><span class="num">03</span>Which tools integrate well</h2>
+
+    <p>Based on real deployments we've run, here's the reality for common field service tools:</p>
+
+    <ul>
+      <li><strong>ServiceTitan:</strong> Full API. Integration is clean.</li>
+      <li><strong>Housecall Pro:</strong> API available. Good for intake and job creation.</li>
+      <li><strong>Jobber:</strong> API available. Solid.</li>
+      <li><strong>FieldEdge:</strong> Has API. Works.</li>
+      <li><strong>QuickBooks Online:</strong> Robust API. Invoice automation is easy.</li>
+      <li><strong>Older desktop-only CRMs:</strong> Usually require middleware or workaround.</li>
+    </ul>
+
+    <h2><span class="num">04</span>What can go wrong</h2>
+
+    <p>The most common integration failures we see:</p>
+
+    <ul>
+      <li><strong>Permission issues.</strong> Your API token doesn't have write access to the right objects. Fix: work with your CRM admin to scope properly.</li>
+      <li><strong>Rate limits.</strong> High-volume integrations can hit API rate limits. Fix: batching and intelligent retry logic.</li>
+      <li><strong>Data model drift.</strong> Your CRM evolves. Fields get renamed. The integration breaks silently. Fix: monitoring and schema validation.</li>
+      <li><strong>Missing webhooks.</strong> The CRM doesn't emit an event for something you need. Fix: scheduled polling as fallback.</li>
+    </ul>
+
+    <h2><span class="num">05</span>Security and data residency</h2>
+
+    <p>Before any integration ships, three questions:</p>
+
+    <ul>
+      <li><strong>Where does the data live?</strong> If you're in regulated territory (HIPAA for medical fleets, SOC 2 requirements, etc.), the answer matters.</li>
+      <li><strong>Who has access to the API credentials?</strong> Scope narrowly. Rotate regularly. Never check them into code.</li>
+      <li><strong>What's logged?</strong> Every agent action should be auditable after the fact. "The AI booked this job" needs to be traceable.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">What to ask us</div>
+      <p>If you're planning a deployment, the first conversation should be about your existing tools, not about the AI. "What do you currently use?" beats "what do you want the AI to do?" every time.</p>
+    </div>
+
+    <div class="guide-cta">
+      <h3>Want to see what would integrate with your setup?</h3>
+      <p>Tell us what tools you use and we'll map out exactly what's possible.</p>
+      <a href="/#contact" class="btn">Book a Free Discovery Call</a>
+    </div>
+
+  </section>
+
+</article>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="logo" aria-label="Keres AI">
+        <img src="/assets/img/KeresLogo.png" alt="Keres AI" class="logo-img">
+      </a>
+      <p>Custom AI agents that eliminate repetitive work for field service businesses across septic, roofing, HVAC, and towing.</p>
+      <div class="footer-contact">
+        <a href="mailto:ops@keresai.com">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 7 9-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>ops@keresai.com</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#industries">Industries</a></li>
+        <li><a href="/resources.html">Resources</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/#contact">Book a Call</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div><span id="year">2026</span> · &copy; Keres AI. All rights reserved.</div>
+    <div>Automate Everything.</div>
+  </div>
+</footer>
+
+<script src="/assets/app.js" defer></script>
+</body>
+</html>
