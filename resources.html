@@ -434,28 +434,6 @@
   </div>
 </footer>
 
-<!-- Category filter -->
-<script>
-(function () {
-  var pills = document.querySelectorAll('.cat-pill');
-  var cards = document.querySelectorAll('.res-card');
-  pills.forEach(function (pill) {
-    pill.addEventListener('click', function () {
-      pills.forEach(function (p) { p.classList.remove('active'); });
-      pill.classList.add('active');
-      var filter = pill.getAttribute('data-filter');
-      cards.forEach(function (c) {
-        if (filter === 'all' || c.getAttribute('data-category') === filter) {
-          c.classList.remove('hidden');
-        } else {
-          c.classList.add('hidden');
-        }
-      });
-    });
-  });
-})();
-</script>
-
-<script src="/assets/app.js" defer></script>
+<script src="/assets/app.js?v=2" defer></script>
 </body>
 </html>

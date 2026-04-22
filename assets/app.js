@@ -79,24 +79,50 @@
     window.addEventListener('resize', () => { if (window.innerWidth > 768) setOpen(false); });
   });
 
-  /* ─── Scroll-spy ────────────────────────────────────── */
+  /* ─── Scroll-spy (IntersectionObserver-based) ──────── */
   document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section[id]');
     const links    = document.querySelectorAll('.nav-links a[href^="#"]');
-    if (!links.length) return;
+    if (!links.length || !sections.length || !('IntersectionObserver' in window)) return;
 
-    function onScroll() {
-      const y = window.scrollY + 120;
-      let current = '';
-      sections.forEach(s => { if (y >= s.offsetTop) current = s.id; });
+    const linkMap = new Map();
+    links.forEach(a => linkMap.set(a.getAttribute('href').slice(1), a));
+
+    const setActive = (id) => {
       links.forEach(a => {
-        const active = a.getAttribute('href') === '#' + current;
+        const active = a.getAttribute('href') === '#' + id;
         a.classList.toggle('active', active);
-        if (active) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        active ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current');
       });
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      // pick the most-visible section intersecting the viewport
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible && linkMap.has(visible.target.id)) setActive(visible.target.id);
+    }, { rootMargin: '-120px 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
+
+    sections.forEach(s => io.observe(s));
+  });
+
+  /* ─── Resource page filter pills ───────────────────── */
+  document.addEventListener('DOMContentLoaded', () => {
+    const pills = document.querySelectorAll('.cat-pill');
+    const cards = document.querySelectorAll('.res-card[data-category]');
+    if (!pills.length || !cards.length) return;
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.dataset.filter;
+        cards.forEach(c => {
+          c.classList.toggle('hidden', filter !== 'all' && c.dataset.category !== filter);
+        });
+      });
+    });
   });
 
   /* ─── Reveal-on-scroll ─────────────────────────────── */
