@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.keresai.com/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.keresai.com/"/>
@@ -12,5 +12,17 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.keresai.com/?lang=de"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.keresai.com/?lang=pt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.keresai.com/"/>
+  </url>
+  <url>
+    <loc>https://www.keresai.com/resources.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.keresai.com/guides/septic-automation-playbook.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
