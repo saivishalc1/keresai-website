@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.keresai.com/</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.keresai.com/"/>
@@ -15,56 +15,19 @@
   </url>
   <url>
     <loc>https://www.keresai.com/resources.html</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.keresai.com/guides/septic-automation-playbook.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.keresai.com/guides/roofing-growth-through-ai.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.keresai.com/guides/hvac-scaling-checklist.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.keresai.com/guides/towing-operations-automation.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.keresai.com/guides/customer-intake-automation.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.keresai.com/guides/measuring-automation-roi.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.keresai.com/guides/integrating-ai-into-your-stack.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.keresai.com/guides/roofing-case-study-15-hours.html</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://www.keresai.com/guides/septic-automation-playbook.html</loc><lastmod>2026-04-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.keresai.com/guides/roofing-growth-through-ai.html</loc><lastmod>2026-04-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.keresai.com/guides/hvac-scaling-checklist.html</loc><lastmod>2026-04-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.keresai.com/guides/towing-operations-automation.html</loc><lastmod>2026-04-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.keresai.com/guides/customer-intake-automation.html</loc><lastmod>2026-04-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.keresai.com/guides/measuring-automation-roi.html</loc><lastmod>2026-04-22</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.keresai.com/guides/integrating-ai-into-your-stack.html</loc><lastmod>2026-04-22</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.keresai.com/guides/roofing-case-study-15-hours.html</loc><lastmod>2026-04-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.keresai.com/legal/privacy.html</loc><lastmod>2026-04-22</lastmod><priority>0.3</priority></url>
+  <url><loc>https://www.keresai.com/legal/terms.html</loc><lastmod>2026-04-22</lastmod><priority>0.3</priority></url>
+  <url><loc>https://www.keresai.com/legal/security.html</loc><lastmod>2026-04-22</lastmod><priority>0.3</priority></url>
 </urlset>
